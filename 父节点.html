@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="" />
+</head>
+<style type="text/css">
+    table {
+        border: 1px solid black;
+    }
+
+    tr {
+        border: 1px solid black;
+    }
+
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    编号:<input type="text" id="value1">
+    姓名:<input type="text" id="value2">
+    性别：<input type="text" id="value3">
+    <button onclick="fn()">新增</button>
+    <table id="table">
+        <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>操作</td>
+        </tr>
+    </table>
+
+
+    <script>
+        function del(obj) {
+            var table = obj.parentNode.parentNode.parentNode;
+            var trq = obj.parentNode.parentNode;
+            table.removeChild(trq);
+        }
+        function fn() {
+            var tab = document.getElementById("table");
+            var val1 = document.getElementById("value1").value;
+            var val2 = document.getElementById("value2").value;
+            var val3 = document.getElementById("value3").value;
+
+            var tr1 = document.createElement("tr");
+
+            var td1 = document.createElement("td");
+            var v1 = document.createTextNode(val1);
+            td1.appendChild(v1);
+
+            var td2 = document.createElement("td");
+            var v2 = document.createTextNode(val2);
+            td2.appendChild(v2);
+
+            var td3 = document.createElement("td");
+            var v3 = document.createTextNode(val3);
+            td3.appendChild(v3);
+
+            var td4 = document.createElement("td");
+            var but = document.createElement("a");
+            var a1 = document.createTextNode("删除");
+            but.setAttribute("onclick", "del(this)");
+            but.setAttribute("href", "#");
+            but.appendChild(a1);
+
+            td4.appendChild(but);
+
+            tr1.appendChild(td1);
+            tr1.appendChild(td2);
+            tr1.appendChild(td3);
+            tr1.appendChild(td4);
+            tab.appendChild(tr1);
+        }
+    </script>
+</body>
+
+</html>

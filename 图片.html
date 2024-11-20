@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <img scr="" id="dengpao" src="https://pic.quanjing.com/9j/rb/QJ6863673268.jpg">
+
+  <script>
+    function on() {
+      document.getElementById('dengpao').src = 'https://pic.quanjing.com/9j/rb/QJ6863673268.jpg'
+    }
+    function off() {
+      document.getElementById('dengpao').src = 'https://ts1.cn.mm.bing.net/th/id/R-C.bcdd1a43eced7866a93f3643f1a58950?rik=EEl7NK0%2fWFM7jQ&riu=http%3a%2f%2fpic32.photophoto.cn%2f20140711%2f0022005830692824_b.jpg&ehk=XY6p6PMF7J9E5YD3UWMbd8xnFEUnteLgv8iSYL%2bg4EI%3d&risl=&pid=ImgRaw&r=0'
+    }
+    var a = 0
+    setInterval(function () {
+      if (a % 2 == 0) {
+        on();
+      } else {
+        off()
+      }
+      a++
+    }, 1000)
+  </script>
+</body>
+
+</html>
